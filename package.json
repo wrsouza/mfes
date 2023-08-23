@@ -1,0 +1,8 @@
+{
+  "name": "md-federation",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:wrsouza/mfes.git",
+  "author": "Willian Souza <52672785+wrsouza@users.noreply.github.com>",
+  "license": "MIT"
+}
