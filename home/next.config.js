@@ -22,7 +22,19 @@ module.exports = {
           home: "./src/pages",
         },
         remotes: remotes(options.isServer),
-        shared: {},
+        shared: {
+          "i18next-shared-lib/": { // BEWARE THE TRAILING "/" !!
+            singleton: true,
+          },
+          i18next: {
+            singleton: true,
+            requiredVersion: dependencies.i18next
+          },
+          "react-i18next": {
+            singleton: true,
+            requiredVersion: dependencies["react-i18next"]
+          },
+        },
         extraOptions: {
           exposePages: true,
         },

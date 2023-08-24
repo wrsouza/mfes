@@ -22,7 +22,9 @@ module.exports = {
           sellers: "./src/pages",
         },
         remotes: remotes(options.isServer),
-        shared: {},
+        shared: {
+          
+        },
         extraOptions: {
           exposePages: true,
         },

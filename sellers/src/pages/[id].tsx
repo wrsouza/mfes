@@ -1,5 +1,6 @@
 import { GetServerSideProps, GetServerSidePropsContext } from 'next';
 import Link from "next/link";
+import useNextHostTranslation from "../i18n/useNextHostTranslation";
 
 type User = {
   id: number;
@@ -13,13 +14,15 @@ type SellersProps = {
 };
 
 export default function EditSeller({ data }: SellersProps) {
+  const { t } = useNextHostTranslation('sellers-i18n');
+
   return (
     <div className="container">
       <h1>Edit Seller {data.id}</h1>
       <div>
-        <p>Name: {data.name}</p>
-        <p>Username: {data.username}</p>
-        <p>E-mail: {data.email}</p>
+        <p>{t('fieldName')}: {data.name}</p>
+        <p>{t('fieldUsername')}: {data.username}</p>
+        <p>{t('fieldEmail')}: {data.email}</p>
       </div>
       <Link href="/sellers" className="btn btn-primary btn-sm">
         Voltar

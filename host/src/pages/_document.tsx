@@ -1,8 +1,15 @@
-import { Html, Head, Main, NextScript } from "next/document";
+import Document, {
+  Html,
+  Head,
+  Main,
+  NextScript,
+} from 'next/document'
+import type { DocumentProps } from 'next/document'
 
-export default function Document() {
+class MyDocument extends Document<DocumentProps> {
+  render() {
   return (
-    <Html lang="en">
+    <Html>
       <Head />
       <body style={{ padding: 0, margin: 0 }}>
         <Main />
@@ -10,4 +17,7 @@ export default function Document() {
       </body>
     </Html>
   );
+  }
 }
+
+export default MyDocument;

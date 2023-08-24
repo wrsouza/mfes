@@ -1,8 +1,23 @@
 {
   "name": "md-federation",
+  "private": true,
+  "workspaces": [
+    "./host",
+    "./home",
+    "./sellers",
+    "./i18next-shared-lib"
+  ],
   "version": "1.0.0",
   "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"cd host; npm run dev\" \"cd home; npm run dev\" \"cd sellers; npm run dev\" \"cd i18next-shared-lib; npm run dev\"",
+    "e2e:ci": "yarn start & wait-on http-get://localhost:3000/ && npx cypress run --config-file ../cypress/config/cypress.config.ts --config '{\"supportFile\": \"../cypress/support/e2e.ts\"}' --spec \"./e2e/runAll*.cy.ts\" --browser=chrome"
+  },
   "repository": "git@github.com:wrsouza/mfes.git",
   "author": "Willian Souza <52672785+wrsouza@users.noreply.github.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "latest",
+    "wait-on": "7.0.1"
+  }
 }

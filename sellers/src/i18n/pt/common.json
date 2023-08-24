@@ -1,0 +1,8 @@
+{
+    "title": "Vendedores",
+    "fieldId": "Id",
+    "fieldName": "Nome",
+    "fieldUsername": "Usuário",
+    "fieldEmail": "E-mail",
+    "buttonEdit": "Editar"
+}

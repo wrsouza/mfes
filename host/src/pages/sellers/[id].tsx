@@ -1,7 +1,7 @@
 import type { GetServerSidePropsContext } from "next";
 import dynamic from "next/dynamic";
 const SellerEditPage = dynamic(() => import("sellers/pages/[id]"), {
-  ssr: true,
+  ssr: false,
 });
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
@@ -16,4 +16,4 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
   };
 }
 
-export default SellerEditPage;
+export default SellerEditPage
