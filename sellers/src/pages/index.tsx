@@ -1,5 +1,4 @@
 import Link from "next/link";
-import useNextHostTranslation from "../i18n/useNextHostTranslation";
 
 type User = {
   id: number;
@@ -13,18 +12,16 @@ type SellersProps = {
 };
 
 export default function Sellers({ data }: SellersProps) {
-  const { t } = useNextHostTranslation('sellers-i18n');
-
   return (
     <div className="container">
-      <h1>{t('title')}</h1>
+      <h1>Sellers</h1>
       <table className="table">
         <thead>
           <tr>
-            <td>{t('id')}</td>
-            <td>{t('fieldName')}</td>
-            <td>{t('fieldUsername')}</td>
-            <td>{t('fieldEmail')}</td>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Username</td>
+            <td>E-mail</td>
             <td></td>
           </tr>
         </thead>
@@ -40,7 +37,7 @@ export default function Sellers({ data }: SellersProps) {
                   href={`/sellers/${id}`}
                   className="btn btn-primary btn-sm"
                 >
-                  {t('buttonEdit')}
+                  Edit
                 </Link>
                 <button
                   className="btn btn-danger btn-sm"

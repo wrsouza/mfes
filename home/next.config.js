@@ -3,12 +3,14 @@ const { dependencies } = require("./package.json");
 
 const HOST_URL = process.env.HOST_URL;
 const SELLERS_URL = process.env.SELLERS_URL;
+const BLOG_URL = process.env.BLOG_URL;
 
 const remotes = (isServer) => {
   const location = isServer ? "ssr" : "chunks";
   return {
     host: `host@${HOST_URL}/_next/static/${location}/remoteEntry.js`,
     sellers: `sellers@${SELLERS_URL}/_next/static/${location}/remoteEntry.js`,
+    blog: `blog@${BLOG_URL}/_next/static/${location}/remoteEntry.js`,
   };
 };
 

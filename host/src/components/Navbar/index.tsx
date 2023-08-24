@@ -34,6 +34,11 @@ export default function Navbar() {
               Sellers
             </Link>
           </li>
+          <li className="nav-item">
+            <Link href="/blog" className="nav-link">
+              Blog
+            </Link>
+          </li>
         </ul>
         <div style={{ position: "absolute", top: "10px", right: "10px", display: "flex", width: "180px" }}>
           <button onClick={() => onToggleLanguageClick('en')} className="btn btn-sm">EN</button>
